@@ -17,7 +17,7 @@ function UserList({ onSelectUser }) {
         return;
       }
       try {
-        const res = await axios.get('https://mernchatapp-c856.onrender.com/api/users', {
+        const res = await axios.get('https://project-vvyj.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(res.data.map(user => ({ ...user, online: user.online || false })));

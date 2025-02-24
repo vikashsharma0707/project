@@ -19,7 +19,7 @@ function ChatWindow({ selectedUser, currentUser }) {
         return;
       }
       try {
-        const res = await axios.get(`https://mernchatapp-c856.onrender.com/api/users/messages/${selectedUser._id}`, {
+        const res = await axios.get(`https://project-vvyj.onrender.com/api/users/messages/${selectedUser._id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setMessages(res.data);
@@ -63,7 +63,7 @@ function ChatWindow({ selectedUser, currentUser }) {
     };
     
     try {
-      const res = await axios.post('https://mernchatapp-c856.onrender.com/api/users/messages', message, {
+      const res = await axios.post('https://project-vvyj.onrender.com/api/users/messages', message, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

@@ -26,7 +26,7 @@ function Profile() {
 
     const fetchUserProfile = async () => {
       try {
-        const res = await axios.get('https://mernchatapp-c856.onrender.com/api/users/profile/' + JSON.parse(atob(token.split('.')[1])).id, {
+        const res = await axios.get('https://project-vvyj.onrender.com/api/users/profile/' + JSON.parse(atob(token.split('.')[1])).id, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(res.data);
@@ -67,7 +67,7 @@ function Profile() {
     });
 
     try {
-      const res = await axios.put(`https://mernchatapp-c856.onrender.com/api/users/${JSON.parse(atob(token.split('.')[1])).id}`, data, {
+      const res = await axios.put(`https://project-vvyj.onrender.com/api/users/${JSON.parse(atob(token.split('.')[1])).id}`, data, {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
@@ -85,7 +85,7 @@ function Profile() {
     if (window.confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
       const token = localStorage.getItem('token');
       try {
-        await axios.delete(`https://mernchatapp-c856.onrender.com/api/users/${JSON.parse(atob(token.split('.')[1])).id}`, {
+        await axios.delete(`https://project-vvyj.onrender.com/api/users/${JSON.parse(atob(token.split('.')[1])).id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         localStorage.removeItem('token');

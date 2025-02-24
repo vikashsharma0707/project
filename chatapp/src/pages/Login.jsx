@@ -10,7 +10,7 @@ function Login() {
 
   const handleLogin = async (data) => {
     try {
-      const res = await axios.post('https://mernchatapp-c856.onrender.com/api/auth/login', {
+      const res = await axios.post('https://project-vvyj.onrender.com/api/auth/login', {
         email: data.email,
         password: data.password
       });
