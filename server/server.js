@@ -1,5 +1,3 @@
-
-
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -10,16 +8,17 @@ const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
 const User = require('./models/User');
 const config = require('./config/config');
-const jwt = require('jsonwebtoken'); // Add JWT for authentication
+const jwt = require('jsonwebtoken');
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: config.corsOptions
+  cors: config.corsOptions // Use the same CORS options as HTTP
 });
 
 app.use(cors(config.corsOptions));
 app.use(express.json());
+
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
@@ -31,11 +30,9 @@ mongoose.connect(config.mongoURI)
     console.error('MongoDB connection error:', err);
   });
 
-// Map to store user-socket mappings
 const userSockets = new Map();
 
 io.use((socket, next) => {
-  // Authenticate Socket.IO connection using JWT
   const token = socket.handshake.auth.token;
   if (!token) {
     return next(new Error('Authentication error: No token provided'));
@@ -43,15 +40,11 @@ io.use((socket, next) => {
 
   try {
     const decoded = jwt.verify(token, config.jwtSecret);
-    socket.userId = decoded.id; // Store user ID in socket for later use
+    socket.userId = decoded.id;
     next();
   } catch (error) {
     return next(new Error('Authentication error: Invalid token'));
   }
-});
-
-app.get("/", (req, res) => {
-  res.send("Backend is running successfully  on port 5000!");
 });
 
 io.on('connection', (socket) => {
@@ -59,14 +52,12 @@ io.on('connection', (socket) => {
 
   socket.on('user-online', async () => {
     try {
-      const userId = socket.userId; // Use the authenticated userId from the socket
+      const userId = socket.userId;
       if (userId) {
         await User.findByIdAndUpdate(userId, { online: true });
         userSockets.set(userId, socket.id);
         io.emit('status-update', { userId, online: true });
         console.log(`User ${userId} is now online (Socket ID: ${socket.id})`);
-      } else {
-        console.error('No userId found for socket:', socket.id);
       }
     } catch (error) {
       console.error('Error updating user online status:', error);
@@ -75,13 +66,12 @@ io.on('connection', (socket) => {
 
   socket.on('send-message', async (message) => {
     try {
-      const senderId = socket.userId; // Get sender from authenticated socket
+      const senderId = socket.userId;
       if (!senderId) {
         console.error('No sender ID found for socket:', socket.id);
         return;
       }
 
-      // Ensure message has sender and receiver
       const fullMessage = { ...message, sender: senderId };
       const receiverSocketId = userSockets.get(message.receiver);
       if (receiverSocketId) {
@@ -90,7 +80,7 @@ io.on('connection', (socket) => {
       } else {
         console.log(`Receiver ${message.receiver} is offline or not connected. Message stored in MongoDB.`);
       }
-      io.to(socket.id).emit('receive-message', fullMessage); // Feedback to sender
+      io.to(socket.id).emit('receive-message', fullMessage);
     } catch (error) {
       console.error('Error sending message:', error);
     }
