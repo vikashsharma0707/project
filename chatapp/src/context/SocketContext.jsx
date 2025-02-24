@@ -8,7 +8,7 @@ export const useSocket = () => useContext(SocketContext);
 export const SocketProvider = ({ children }) => {
   const token = localStorage.getItem('token');
 
-  const socket = io('https://project-vvyj.onrender.com', {
+  const socket = io('https://project-1-2eem.onrender.com', {
     auth: { token }, // Pass JWT token for authentication
     reconnectionAttempts: 5, // Limit reconnection attempts
     reconnectionDelay: 1000, // Delay between reconnection attempts

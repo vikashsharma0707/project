@@ -25,7 +25,7 @@ function Dashboard() {
 
     const fetchCurrentUser = async () => {
       try {
-        const res = await axios.get('https://project-vvyj.onrender.com/api/users', {
+        const res = await axios.get('https://project-1-2eem.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const user = res.data.find(u => u._id === JSON.parse(atob(token.split('.')[1])).id);

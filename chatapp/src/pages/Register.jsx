@@ -10,7 +10,7 @@ function Register() {
 
   const handleRegister = async (data) => {
     try {
-      const res = await axios.post('https://project-vvyj.onrender.com/api/auth/register', data);
+      const res = await axios.post('https://project-1-2eem.onrender.com/api/auth/register', data);
       localStorage.setItem('token', res.data.token);
       navigate('/dashboard');
     } catch (error) {
