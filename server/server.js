@@ -50,6 +50,10 @@ io.use((socket, next) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running successfully!");
+});
+
 io.on('connection', (socket) => {
   console.log('Authenticated user connected:', socket.id, 'User ID:', socket.userId);
 
