@@ -1,0 +1,192 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* AuthForm Styles */
+.auth-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.auth-form input,
+.auth-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #0056b3;
+}
+
+/* UserList Styles */
+.user-list {
+  width: 25%;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.user-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
+
+.status-online {
+  color: #28a745;
+  margin-left: 10px;
+}
+
+.status-offline {
+  color: #dc3545;
+  margin-left: 10px;
+}
+
+/* ChatWindow Styles */
+.chat-window {
+  width: 75%;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.chat-window h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.message-container {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message.right {
+  text-align: right;
+}
+
+.message span {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.chat-form {
+  display: flex;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
+}
+
+.chat-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.chat-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px;
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 24px;
+}
+
+.logout-btn {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+}
+
+/* Login/Register Page Styles */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-container {
+  text-align: center;
+}
+
+.auth-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}

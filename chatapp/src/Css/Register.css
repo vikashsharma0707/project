@@ -1,0 +1,162 @@
+/* ... (existing styles remain unchanged) ... */
+
+/* Register Page Styles */
+.register-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff8c00, #ff4500); /* Orange gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .register-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency for overlay */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .join-section {
+    flex: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for text area */
+    color: #ff4500; /* Orange text to match gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .arrow-down {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid rgba(255, 255, 255, 0.9); /* Match background */
+  }
+  
+  .join-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .join-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about-btn {
+    padding: 10px 20px;
+    background: #ff8c00; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+  }
+  
+  .about-btn:hover {
+    background: #ff4500; /* Darker orange on hover */
+  }
+  
+  .auth-container {
+    flex: 1;
+    padding: 40px;
+    background: white; /* White background for form */
+    border-left: none; /* Removed border to match image */
+    border-radius: 0 10px 10px 0; /* Curved edge on right side */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); /* Curved edge on left */
+  }
+  
+  .auth-container h1 {
+    font-size: 28px;
+    color: #ff4500; /* Orange heading */
+    margin-bottom: 20px;
+  }
+  
+  .auth-form input,
+  .auth-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px; /* Slightly rounded corners */
+    font-size: 16px;
+    background: #f9f9f9; /* Light gray background for inputs */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff8c00; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+  }
+  
+  .auth-form button:hover {
+    background: #ff4500; /* Darker orange on hover */
+  }
+  
+  .register-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .register-btn {
+    background: none;
+    border: none;
+    color: #ff4500; /* Orange text for login link */
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  .register-btn:hover {
+    color: #ff8c00; /* Darker orange on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .register-content {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  
+    .join-section, .auth-container {
+      flex: 1;
+      padding: 20px;
+    }
+  
+    .auth-container {
+      border-radius: 0 0 10px 10px; /* Adjust for mobile */
+      clip-path: none; /* Remove curve on mobile */
+    }
+  
+    .arrow-down {
+      display: none; /* Hide arrow on mobile */
+    }
+  }

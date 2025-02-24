@@ -1,0 +1,124 @@
+/* ... (existing styles remain unchanged) ... */
+
+/* Login Page Styles */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6b48ff, #a93cff); /* Purple gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .login-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency for overlay */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+  }
+  
+  .welcome-section {
+    flex: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white for text area */
+    color: #6b48ff; /* Purple text to match gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .welcome-section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .welcome-section p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .auth-container {
+    flex: 1;
+    padding: 40px;
+    background: white; /* White background for form */
+    border-left: 1px solid #e0e0e0; /* Light gray border */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .auth-container h1 {
+    font-size: 28px;
+    color: #6b48ff; /* Purple heading */
+    margin-bottom: 20px;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px; /* Rounded corners as in image */
+    font-size: 16px;
+    background: #f9f9f9; /* Light gray background for inputs */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-form button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, #6b48ff, #a93cff); /* Purple gradient button */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(107, 72, 255, 0.4);
+  }
+  
+  .auth-form button:hover {
+    background: linear-gradient(45deg, #5a3cff, #9331ff); /* Darker purple on hover */
+  }
+  
+  .register-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .register-btn {
+    background: none;
+    border: none;
+    color: #6b48ff; /* Purple text for register link */
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 16px;
+  }
+  
+  .register-btn:hover {
+    color: #5a3cff; /* Darker purple on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-content {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  
+    .welcome-section, .auth-container {
+      flex: 1;
+      padding: 20px;
+    }
+  
+    .auth-container {
+      border-left: none;
+      border-top: 1px solid #e0e0e0;
+    }
+  }
