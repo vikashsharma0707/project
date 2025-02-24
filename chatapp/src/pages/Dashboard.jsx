@@ -25,7 +25,7 @@ function Dashboard() {
 
     const fetchCurrentUser = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/users', {
+        const res = await axios.get('https://mernchatapp-c856.onrender.com/api/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         const user = res.data.find(u => u._id === JSON.parse(atob(token.split('.')[1])).id);
