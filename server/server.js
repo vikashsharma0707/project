@@ -51,7 +51,7 @@ io.use((socket, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Backend is running successfully!");
+  res.send("Backend is running successfully  on port 5000!");
 });
 
 io.on('connection', (socket) => {
